@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BeginCollectionItemCore</id>
+    <version>1.0.0</version>
+    <title>BeginCollectionItemCore</title>
+    <authors>Authored by Steve Sanderson, NuGet Package by Dan Ludwig and hazzik, .Net Core Package by Saad Farooq</authors>
+    <owners>Saad Farooq</owners>
+    <licenseUrl>https://github.com/saad749/BeginCollectionItemCore</licenseUrl>
+    <projectUrl>https://github.com/saad749/BeginCollectionItemCore</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This Html Helper leverages the default model binder in ASP.NET Core 1.0 and higher to materialize viewmodel collection properties from an HTTP POST.</description>
+    <releaseNotes>This Html Helper leverages the default model binder in ASP.NET Core 1.0 and higher to materialize viewmodel collection properties from an HTTP POST.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>BeginCollectionItem, HtmlHelper, ASP.Net Core, AspNetCore, MVC, BeginCollectionItemCore</tags>
+  </metadata>
+</package>

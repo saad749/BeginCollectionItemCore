@@ -1,0 +1,18 @@
+﻿@using HtmlHelpers.BeginCollectionItemCore;
+@model BeginCollectionItemCoreDemo.ViewModels.OrderItemModel
+
+
+@using (Html.BeginCollectionItem("orderItems"))
+{
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Id);
+    @Html.EditorFor(x => x.Id);
+    <br />
+    @Html.LabelFor(x => x.Title);
+    @Html.EditorFor(x => x.Title);
+    <br />
+    @Html.LabelFor(x => x.Quantity);
+    @Html.EditorFor(x => x.Quantity);
+
+}
