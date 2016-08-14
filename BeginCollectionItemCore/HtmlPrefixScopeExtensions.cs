@@ -49,7 +49,7 @@ namespace HtmlHelpers.BeginCollectionItemCore
             if (queue == null)
             {
                 httpContext.Items[key] = queue = new Queue<string>();
-                StringValues previouslyUsedIds = httpContext.Request.Form[collectionName + ".index"];
+                StringValues previouslyUsedIds = httpContext.Request.Query[collectionName + ".index"];
                 if (!string.IsNullOrEmpty(previouslyUsedIds))
                     foreach (var previouslyUsedId in previouslyUsedIds)
                         queue.Enqueue(previouslyUsedId);

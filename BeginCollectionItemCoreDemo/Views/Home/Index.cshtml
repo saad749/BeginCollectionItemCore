@@ -68,7 +68,7 @@
 </div>
 
 <div class="row">
-    @using (Html.BeginForm("Home", "Submit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Submit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <br />
         <br />
@@ -81,6 +81,28 @@
         @Html.LabelFor(x => x.OrderDateTime, new { @class = "control-label col-sm-2" });
         @Html.TextBoxFor(x => x.OrderDateTime);
 
-        Html.RenderPartial("_CollectionPartial", new OrderItemModel());
+        <div id="collectionItems">
+            @{Html.RenderPartial("_CollectionPartial", new OrderItemModel());}
+        </div>
+        <input type="button" id="btnAddMore" class="btn btn-primary" value="Add More Items" />
+        
+        <br />
+        <hr />
+        <input type="submit" class="btn btn-success" value="Submit" />
     }
 </div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $('#btnAddMore').click(function () {
+            $.ajax({
+                url: '/Home/NewItem',
+                success: function (html) {
+                    $('#collectionItems').append(html);
+                }
+            });
+
+        });
+    </script>
+}

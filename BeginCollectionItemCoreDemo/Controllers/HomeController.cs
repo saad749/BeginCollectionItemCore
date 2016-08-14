@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BeginCollectionItemCoreDemo.ViewModels;
 
 namespace BeginCollectionItemCoreDemo.Controllers
 {
@@ -33,10 +34,15 @@ namespace BeginCollectionItemCoreDemo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Submit()
+        public IActionResult Submit(OrderModel model)
         {
 
             return View("Index");
+        }
+
+        public IActionResult NewItem()
+        {
+            return PartialView("_CollectionPartial", new OrderItemModel());
         }
     }
 }
