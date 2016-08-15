@@ -2,7 +2,7 @@
 
 ## Usage
 
-``` C#
+```C#
 @using HtmlHelpers.BeginCollectionItemCore;
 @model BeginCollectionItemCoreDemo.ViewModels.OrderItemModel
 
