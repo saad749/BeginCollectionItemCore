@@ -1,18 +1,30 @@
 ﻿@using HtmlHelpers.BeginCollectionItemCore;
 @model BeginCollectionItemCoreDemo.ViewModels.OrderItemModel
 
+<div class="form-horizontal well">
+    @using (Html.BeginCollectionItem("orderItems"))
+    {
+        <div class="form-group">
+            <label asp-for="Id" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Id" class="form-control"></input>
+                <span asp-validation-for="Id" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger" />
+            </div>
+        </div>
 
-@using (Html.BeginCollectionItem("orderItems"))
-{
-    <br />
-    <br />
-    @Html.LabelFor(x => x.Id);
-    @Html.EditorFor(x => x.Id);
-    <br />
-    @Html.LabelFor(x => x.Title);
-    @Html.EditorFor(x => x.Title);
-    <br />
-    @Html.LabelFor(x => x.Quantity);
-    @Html.EditorFor(x => x.Quantity);
-
-}
+        <div class="form-group">
+            <label asp-for="Quantity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Quantity" class="form-control"></input>
+                <span asp-validation-for="Quantity" class="text-danger" />
+            </div>
+        </div>
+    }
+</div>

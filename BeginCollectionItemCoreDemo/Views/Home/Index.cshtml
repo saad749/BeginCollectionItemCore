@@ -68,30 +68,18 @@
 </div>
 
 <div class="row">
-    @using (Html.BeginForm("Submit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <br />
-        <br />
-        @Html.LabelFor(x => x.Id, new { @class = "control-label col-sm-2" });
-        @Html.TextBoxFor(x => x.Id);
-        <br/>
-        @Html.LabelFor(x => x.CustomerId, new { @class = "control-label col-sm-2" });
-        @Html.TextBoxFor(x => x.CustomerId);
-        <br />
-        @Html.LabelFor(x => x.OrderDateTime, new { @class = "control-label col-sm-2" });
-        @Html.TextBoxFor(x => x.OrderDateTime);
-
+    <form asp-controller="Home" asp-action="Submit" enctype="multipart/form-data">
         <div id="collectionItems">
             @{Html.RenderPartial("_CollectionPartial", new OrderItemModel());}
         </div>
         <input type="button" id="btnAddMore" class="btn btn-primary" value="Add More Items" />
-        
-        <br />
-        <hr />
-        <input type="submit" class="btn btn-success" value="Submit" />
-    }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
 </div>
-
 
 @section Scripts {
     <script type="text/javascript">
@@ -102,7 +90,6 @@
                     $('#collectionItems').append(html);
                 }
             });
-
         });
     </script>
 }
