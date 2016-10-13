@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.1",
+      "type": "platform"
+    },
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
@@ -17,8 +21,8 @@
     "BeginCollectionItemCore": "1.0.4-0",
     "BundlerMinifier.Core": "2.2.281",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
-    "Microsoft.NETCore.App": "1.0.1"  },
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1"
+  },
 
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
