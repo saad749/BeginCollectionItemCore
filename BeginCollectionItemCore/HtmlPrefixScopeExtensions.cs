@@ -28,11 +28,10 @@ namespace HtmlHelpers.BeginCollectionItemCore
             // autocomplete="off" is needed to work around a very annoying Chrome behaviour
             // whereby it reuses old values after the user clicks "Back", which causes the
             // xyz.index and xyz[...] values to get out of sync.
-            writer.WriteLine(
-                "<input type=\"hidden\" name=\"{0}.index\" autocomplete=\"off\" value=\"{1}\" />",
-                collectionName, html.Encode(itemIndex));
+            string indexInputName = html.Name($"{collectionName}.index");
+            writer.WriteLine($@"<input type=""hidden"" name=""{indexInputName}"" autocomplete=""off"" value=""{html.Encode(itemIndex)}"" />");
 
-            return BeginHtmlFieldPrefixScope(html, string.Format("{0}[{1}]", collectionName, itemIndex));
+            return BeginHtmlFieldPrefixScope(html, html.Name($"{collectionName}[{itemIndex}]"));
         }
 
         public static IDisposable BeginHtmlFieldPrefixScope(this IHtmlHelper html, string htmlFieldPrefix)
