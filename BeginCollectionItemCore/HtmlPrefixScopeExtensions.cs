@@ -22,16 +22,37 @@ namespace HtmlHelpers.BeginCollectionItemCore
 
         public static IDisposable BeginCollectionItem(this IHtmlHelper html, string collectionName, TextWriter writer)
         {
+            /*
+             * added Nested collection support for newly added collection items
+             * as per this http://stackoverflow.com/questions/33916004/nested-list-of-lists-with-begincollectionitem
+             * and this http://www.joe-stevens.com/2011/06/06/editing-and-binding-nested-lists-with-asp-net-mvc-2/
+            */
+            if (html.ViewData["ContainerPrefix"] != null)
+                collectionName = string.Concat(html.ViewData["ContainerPrefix"], ".", collectionName);
+
             var idsToReuse = GetIdsToReuse(html.ViewContext.HttpContext, collectionName);
             var itemIndex = idsToReuse.Count > 0 ? idsToReuse.Dequeue() : Guid.NewGuid().ToString();
+
+            string htmlFieldPrefix = $"{collectionName}[{itemIndex}]";
+            html.ViewData["ContainerPrefix"] = htmlFieldPrefix;
+
+            /* 
+             * html.Name(); has been removed
+             * because of incorrect naming of collection items
+             * e.g.
+             * let collectionName = "Collection"
+             * the first item's name was Collection[0].Collection[<GUID>]
+             * instead of Collection[<GUID>]
+             */
+            string indexInputName = $"{collectionName}.index";
 
             // autocomplete="off" is needed to work around a very annoying Chrome behaviour
             // whereby it reuses old values after the user clicks "Back", which causes the
             // xyz.index and xyz[...] values to get out of sync.
-            string indexInputName = html.Name($"{collectionName}.index");
             writer.WriteLine($@"<input type=""hidden"" name=""{indexInputName}"" autocomplete=""off"" value=""{html.Encode(itemIndex)}"" />");
 
-            return BeginHtmlFieldPrefixScope(html, html.Name($"{collectionName}[{itemIndex}]"));
+
+            return BeginHtmlFieldPrefixScope(html, htmlFieldPrefix);
         }
 
         public static IDisposable BeginHtmlFieldPrefixScope(this IHtmlHelper html, string htmlFieldPrefix)
