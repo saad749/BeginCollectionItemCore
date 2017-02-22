@@ -18,7 +18,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "BeginCollectionItemCore": "1.0.4-0",
+    "BeginCollectionItemCore": "1.0.7-0",
     "BundlerMinifier.Core": "2.2.281",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.1"

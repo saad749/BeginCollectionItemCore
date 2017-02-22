@@ -69,8 +69,9 @@
 
 <div class="row">
     <form asp-controller="Home" asp-action="Submit" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div id="collectionItems">
-            @{Html.RenderPartial("_CollectionPartial", new OrderItemModel());}
+            @Html.EditorFor(m => m.OrderItems)
         </div>
         <input type="button" id="btnAddMore" class="btn btn-primary" value="Add More Items" />
         <div class="form-group">
@@ -82,7 +83,31 @@
 </div>
 
 @section Scripts {
+
+    <environment names="Development">
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"
+                asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"
+                asp-fallback-src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive">
+        </script>
+    </environment>
+
     <script type="text/javascript">
+
+        $(function () {
+            // no need for re-subscribing "add mode discounts" button click event for newly added orderitems
+            $('#collectionItems').on({
+                click: addDiscount
+            }, '.add.discount');
+        });
+
         $('#btnAddMore').click(function () {
             $.ajax({
                 url: '/Home/NewItem',
@@ -91,5 +116,29 @@
                 }
             });
         });
+
+        var addDiscount = function () {
+            var addButton = $(this);
+            $.get({
+                url: '/Home/NewDiscount',
+                data: { 'containerPrefix': addButton.data("container-prefix") },
+                success: function (html) {
+
+                    addButton.siblings('.discount-list').append(html);
+
+                    updateValidation();
+                }
+            });
+        };
+
+        // needed for enabling client side validation for newly added items
+        var updateValidation = function () {
+
+            $('form').data('validator', null);
+            $('form').data('unobtrusiveValidation', null);
+            $.validator.unobtrusive.parse($('form'));
+
+        };
+
     </script>
 }
