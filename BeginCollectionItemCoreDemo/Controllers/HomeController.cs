@@ -36,13 +36,26 @@ namespace BeginCollectionItemCoreDemo.Controllers
         [HttpPost]
         public IActionResult Submit(OrderModel model)
         {
+            if (!ModelState.IsValid) return BadRequest();
+
+
 
             return View("Index");
         }
 
+        [AjaxOnly]
+        [ResponseCache(NoStore = true, Duration = 0)]
         public IActionResult NewItem()
         {
             return PartialView("_CollectionPartial", new OrderItemModel());
+        }
+
+        [AjaxOnly]
+        [ResponseCache(NoStore = true, Duration = 0)] // Fixes IE response caching behaviour that causes incorrect GUID propagation
+        public IActionResult NewDiscount(string containerPrefix)
+        {
+            ViewData["ContainerPrefix"] = containerPrefix;
+            return PartialView("_NestedCollectionPartial", new DiscountModel());
         }
     }
 }

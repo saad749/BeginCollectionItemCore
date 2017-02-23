@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace BeginCollectionItemCoreDemo.ViewModels
 {
-    public class OrderItemModel
+    public class DiscountModel
     {
-        public int Id { get; set; }
         [Required]
-        public string Title { get; set; }
-        public double Quantity { get; set; }
-
-        public List<DiscountModel> Discounts { get; set; }
+        public string Description { get; set; }
+        [Range(1, 10, ErrorMessage = "{0} must be between {1} and {2}")]
+        public double Value { get; set; }
     }
 }
