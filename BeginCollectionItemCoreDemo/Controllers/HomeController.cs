@@ -36,9 +36,8 @@ namespace BeginCollectionItemCoreDemo.Controllers
         [HttpPost]
         public IActionResult Submit(OrderModel model)
         {
-            if (!ModelState.IsValid) return BadRequest();
-
-
+            if (!ModelState.IsValid)
+                return View("Index", model);
 
             return View("Index");
         }
