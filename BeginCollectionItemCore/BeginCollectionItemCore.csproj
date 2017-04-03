@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>BeginCollectionItemCore</AssemblyTitle>
-    <VersionPrefix>1.0.7-0</VersionPrefix>
+    <VersionPrefix>1.0.8</VersionPrefix>
     <TargetFrameworks>netstandard1.6;net461</TargetFrameworks>
     <AssemblyName>BeginCollectionItemCore</AssemblyName>
     <PackageId>BeginCollectionItemCore</PackageId>
@@ -11,6 +11,15 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Authors>Saad Farooq (ASP.Net Core Nuget Package), Dan Ludwig and hazzik (MVC 2+ Nuget Package), Steven Sanderson (Original Author)</Authors>
+    <Description>This Html Helper leverages the default model binder in ASP.NET Core 1.0 and higher to materialize viewmodel collection properties from an HTTP POST. It will also work with ASP.Net Core on .Net Framework 4.6.</Description>
+    <PackageLicenseUrl>https://github.com/saad749/BeginCollectionItemCore</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/saad749/BeginCollectionItemCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/saad749/BeginCollectionItemCore</RepositoryUrl>
+    <PackageTags>BeginCollectionItem HtmlHelper ASP.Net Core AspNetCore MVC BeginCollectionItemCore</PackageTags>
+    <PackageReleaseNotes>1.0.8: Server Side Validation Issue Fixed</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

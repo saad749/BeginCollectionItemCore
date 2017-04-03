@@ -15,3 +15,11 @@
     @Html.EditorFor(x => x.Quantity);
 }
 ```
+
+
+## Release Notes:
+1.0.8: Server Side Validation Issue Fixed
+1.0.7: Bug Fixes for Nested Collections Support
+1.0.6: Fixed Version Number
+1.0.5: Added Support for Nested Collections  
+1.0.4: Added Support for ASP.Net Core on .Net Framework 4.6

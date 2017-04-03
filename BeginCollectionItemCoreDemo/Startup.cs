@@ -28,10 +28,11 @@ namespace BeginCollectionItemCoreDemo
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc().AddViewOptions(options =>
-            {
-                options.HtmlHelperOptions.ClientValidationEnabled = false;
-            }); ;
+            services.AddMvc();
+            //.AddViewOptions(options =>
+            //{
+            //    options.HtmlHelperOptions.ClientValidationEnabled = false;
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BeginCollectionItemCore</id>
-    <version>1.0.1</version>
+    <version>1.0.8</version>
     <title>BeginCollectionItemCore</title>
     <authors>Authored by Steve Sanderson, NuGet Package by Dan Ludwig and hazzik, .Net Core Package by Saad Farooq</authors>
     <owners>Saad Farooq</owners>
