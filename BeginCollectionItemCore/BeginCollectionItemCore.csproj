@@ -3,11 +3,9 @@
   <PropertyGroup>
     <AssemblyTitle>BeginCollectionItemCore</AssemblyTitle>
     <VersionPrefix>1.0.8</VersionPrefix>
-    <TargetFrameworks>netstandard1.6;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
     <AssemblyName>BeginCollectionItemCore</AssemblyName>
     <PackageId>BeginCollectionItemCore</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -17,13 +15,13 @@
     <PackageProjectUrl>https://github.com/saad749/BeginCollectionItemCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/saad749/BeginCollectionItemCore</RepositoryUrl>
     <PackageTags>BeginCollectionItem HtmlHelper ASP.Net Core AspNetCore MVC BeginCollectionItemCore</PackageTags>
-    <PackageReleaseNotes>1.0.8: Server Side Validation Issue Fixed</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.9: Updated to Target .Net Standard 2.0</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
