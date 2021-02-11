@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>BeginCollectionItemCore</AssemblyTitle>
-    <VersionPrefix>1.0.8</VersionPrefix>
+    <VersionPrefix>1.0.9</VersionPrefix>
     <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
     <AssemblyName>BeginCollectionItemCore</AssemblyName>
     <PackageId>BeginCollectionItemCore</PackageId>
