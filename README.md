@@ -18,6 +18,7 @@
 
 
 ## Release Notes:
+- 1.1.0: Updated to Target .Net 5.0
 - 1.0.9: Updated to Target .Net Core 2.0
 - 1.0.8: Server Side Validation Issue Fixed
 - 1.0.7: Bug Fixes for Nested Collections Support
