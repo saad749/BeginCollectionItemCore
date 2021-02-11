@@ -14,9 +14,11 @@
     <PackageProjectUrl>https://github.com/saad749/BeginCollectionItemCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/saad749/BeginCollectionItemCore</RepositoryUrl>
     <PackageTags>BeginCollectionItem HtmlHelper ASP.Net Core AspNetCore MVC BeginCollectionItemCore</PackageTags>
-    <PackageReleaseNotes>1.0.9: Updated to Target .Net Standard 2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.9: Updated to Target .Net Core 2.0</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

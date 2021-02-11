@@ -18,6 +18,7 @@
 
 
 ## Release Notes:
+- 1.0.9: Updated to Target .Net Core 2.0
 - 1.0.8: Server Side Validation Issue Fixed
 - 1.0.7: Bug Fixes for Nested Collections Support
 - 1.0.6: Fixed Version Number
