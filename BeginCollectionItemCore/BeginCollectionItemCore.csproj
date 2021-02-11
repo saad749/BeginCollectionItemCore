@@ -11,7 +11,6 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <Authors>Saad Farooq (ASP.Net Core Nuget Package), Dan Ludwig and hazzik (MVC 2+ Nuget Package), Steven Sanderson (Original Author)</Authors>
     <Description>This Html Helper leverages the default model binder in ASP.NET Core 1.0 and higher to materialize viewmodel collection properties from an HTTP POST. It will also work with ASP.Net Core on .Net Framework 4.6.</Description>
-    <PackageLicenseUrl>https://github.com/saad749/BeginCollectionItemCore</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/saad749/BeginCollectionItemCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/saad749/BeginCollectionItemCore</RepositoryUrl>
     <PackageTags>BeginCollectionItem HtmlHelper ASP.Net Core AspNetCore MVC BeginCollectionItemCore</PackageTags>
