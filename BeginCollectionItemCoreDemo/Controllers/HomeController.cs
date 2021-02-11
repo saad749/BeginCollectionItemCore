@@ -22,9 +22,12 @@ namespace BeginCollectionItemCoreDemo.Controllers
         public IActionResult Submit(OrderModel model)
         {
             if (!ModelState.IsValid)
+            {
+                model.Message = "Invalid Input";
                 return View("Index", model);
-
-            return View("Index");
+            }
+            model.Message = "Submitted Successfully!";
+            return View("Index", model);
         }
 
         [AjaxOnly]
