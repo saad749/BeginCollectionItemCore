@@ -1,5 +1,5 @@
 # BeginCollectionItemCore
-
+![Nuget](https://img.shields.io/nuget/v/BeginCollectionItemCore)
 ## Usage
 
 ```C#
