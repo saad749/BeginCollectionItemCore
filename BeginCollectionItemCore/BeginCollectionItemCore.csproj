@@ -2,19 +2,19 @@
 
   <PropertyGroup>
     <AssemblyTitle>BeginCollectionItemCore</AssemblyTitle>
-    <VersionPrefix>1.1.0</VersionPrefix>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <VersionPrefix>1.1.1</VersionPrefix>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <AssemblyName>BeginCollectionItemCore</AssemblyName>
     <PackageId>BeginCollectionItemCore</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <Authors>Saad Farooq (ASP.Net Core Nuget Package), Dan Ludwig and hazzik (MVC 2+ Nuget Package), Steven Sanderson (Original Author)</Authors>
-    <Description>This Html Helper leverages the default model binder in ASP.NET Core 1.0 and higher to materialize viewmodel collection properties from an HTTP POST. It will also work with ASP.Net Core on .Net Framework 4.6.</Description>
+    <Description>This Html Helper leverages the default model binder in ASP.NET Core 3.1 and 5.0 to materialize viewmodel collection properties from an HTTP POST.</Description>
     <PackageProjectUrl>https://github.com/saad749/BeginCollectionItemCore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/saad749/BeginCollectionItemCore</RepositoryUrl>
     <PackageTags>BeginCollectionItem HtmlHelper ASP.Net Core AspNetCore MVC BeginCollectionItemCore</PackageTags>
-    <PackageReleaseNotes>1.1.0: Updated to Target .Net 5.0</PackageReleaseNotes>
+    <PackageReleaseNotes>1.1.1: Updated to Target netcoreapp3.1 and .Net 5.0</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,10 +24,4 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
 </Project>
